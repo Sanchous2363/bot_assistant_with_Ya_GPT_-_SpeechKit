@@ -37,7 +37,7 @@ def count_tokens_in_project(message):
     cursor = connection.cursor()
     results = cursor.execute(f'SELECT SUM(tokens) FROM users3;')
     for result in results:
-        if result == None:
+        if result[0] == None:
             count = 0
         else:
             count += result[0]
