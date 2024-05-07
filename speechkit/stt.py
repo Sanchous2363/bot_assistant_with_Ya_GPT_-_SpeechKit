@@ -4,6 +4,7 @@ import info.creds
 
 
 def speech_to_text(data):
+    a = "произошла ошибка!"
     # iam_token, folder_id для доступа к Yandex SpeechKit
     iam_token = info.creds.iam_token
     folder_id = info.creds.folder_id
@@ -29,8 +30,7 @@ def speech_to_text(data):
     decoded_data = response.json()
     # Проверяем, не произошла ли ошибка при запросе
     if decoded_data.get("error_code") is None:
-        a =f"Текст аудио: {decoded_data.get("result")}"
-        return a
+        return decoded_data.get("result")
     else:
-        a = "При запросе в SpeechKit возникла ошибка"
-        return a
+        a
+        
