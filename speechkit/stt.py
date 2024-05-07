@@ -29,6 +29,8 @@ def speech_to_text(data):
     decoded_data = response.json()
     # Проверяем, не произошла ли ошибка при запросе
     if decoded_data.get("error_code") is None:
-        return f"Текст аудио: {decoded_data.get("result")}"
+        a =f"Текст аудио: {decoded_data.get("result")}"
+        return a
     else:
-        return "При запросе в SpeechKit возникла ошибка"
+        a = "При запросе в SpeechKit возникла ошибка"
+        return a
